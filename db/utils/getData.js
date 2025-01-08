@@ -6,4 +6,10 @@ const getUniqueAuthorsArray = async () => {
   return [...uniqueAuthors];
 };
 
-module.exports = { getUniqueAuthorsArray };
+const getAllQuotesArray = async () => {
+  const data = await fetchData("https://dummyjson.com/quotes?limit=100&skip=0");
+  const uniqueQuotes = new Set(data.quotes.map((data) => data.quote));
+  return [...uniqueQuotes];
+};
+
+module.exports = { getUniqueAuthorsArray, getAllQuotesArray };
