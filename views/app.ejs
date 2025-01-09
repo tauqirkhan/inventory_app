@@ -7,11 +7,13 @@
   </head>
   <body>
     <section>
-      <% authorsArray.forEach(author => { %> <%= author.name %> <br />
+      <% authorsArray.forEach(author => { %>
+      <a href="/<%= author.id %>/quotes"> <%= author.name %> </a>
+      <br />
       <% }) %>
     </section>
     <section>
-      <% firstAuthorQuotesArray.forEach(quote => { %> <%= quote.quote %> <br />
+      <% quotesArray.forEach(quote => { %> <%= quote.quote %> <br />
       <% }) %>
     </section>
   </body>
