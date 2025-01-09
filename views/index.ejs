@@ -6,7 +6,13 @@
     <title>Legacy Lines</title>
   </head>
   <body>
-    <% authorsArray.forEach(author => { %> <%= author.name %> <br />
-    <% }) %>
+    <section>
+      <% authorsArray.forEach(author => { %> <%= author.name %> <br />
+      <% }) %>
+    </section>
+    <section>
+      <% firstAuthorQuotesArray.forEach(quote => { %> <%= quote.quote %> <br />
+      <% }) %>
+    </section>
   </body>
 </html>
