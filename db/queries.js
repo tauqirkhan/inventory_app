@@ -13,4 +13,15 @@ async function getAllQuotesArrayByAuthorId(author_id) {
   return rows;
 }
 
-module.exports = { getAllAuthorsNameArray, getAllQuotesArrayByAuthorId };
+async function getAuthorNameById(id) {
+  const { rows } = await pool.query("SELECT name FROM authors WHERE id = $1", [
+    id,
+  ]);
+  return rows[0].name;
+}
+
+module.exports = {
+  getAllAuthorsNameArray,
+  getAllQuotesArrayByAuthorId,
+  getAuthorNameById,
+};

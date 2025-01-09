@@ -1,0 +1,159 @@
+/* Reset CSS */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+header {
+  min-height: 10vh;
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+  padding-left: 8vw;
+}
+
+main {
+  border: 1px solid black;
+  display: flex;
+  max-width: 80vw;
+  max-height: 80vh;
+  margin: auto;
+  margin-top: 5vh;
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.authorsSection {
+  width: 250px;
+  overflow-y: auto;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.quotesSection {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 21px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.author {
+  border: 1px solid pink;
+  padding: 10px;
+}
+
+.quotesDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 20px 30px;
+  gap: 25px;
+}
+
+.quotesHead {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.quote {
+}

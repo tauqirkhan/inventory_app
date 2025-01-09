@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legacy Lines</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <section>
-      <% authorsArray.forEach(author => { %>
-      <a href="/<%= author.id %>/quotes"> <%= author.name %> </a>
-      <br />
-      <% }) %>
-    </section>
-    <section>
-      <% quotesArray.forEach(quote => { %> <%= quote.quote %> <br />
-      <% }) %>
-    </section>
+    <header>Legacy Lines</header>
+    <main>
+      <section class="authorsSection">
+        <% authorsArray.forEach(author => { %>
+        <div class="author">
+          <a href="/<%= author.id %>/quotes"> <%= author.name %> </a>
+        </div>
+        <% }) %>
+      </section>
+      <section class="quotesSection">
+        <h1 class="quotesHead"><%= authorName %>'s quotes</h1>
+        <div class="quotesDiv">
+          <% quotesArray.forEach((quote, index) => { %>
+          <div class="quote"><%= quote.quote %></div>
+          <% }) %>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
