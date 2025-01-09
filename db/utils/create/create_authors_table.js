@@ -1,4 +1,4 @@
-const { getUniqueAuthorsArray } = require("./getData");
+const { getUniqueAuthorsArray } = require("../getData");
 
 const create_authors_table = async () => {
   const _authorsArray = await getUniqueAuthorsArray();
