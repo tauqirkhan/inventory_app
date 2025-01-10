@@ -21,7 +21,7 @@
       <section class="quotesSection">
         <div class="quotesHead">
           <h1 class="quoteAuthor"><%= authorName %>'s quotes</h1>
-          <button class="addQuoteBtn">+ Add quote</button>
+          <button class="addQuoteBtn">+ Add more quote</button>
         </div>
         <div class="quotesDiv">
           <% quotesArray.forEach((quote, index) => { %>
@@ -47,7 +47,7 @@
           method="POST"
           class="quoteForm"
         >
-          <div class="formHoad"><%= authorName %>'s quote</div>
+          <div class="formHead"><%= authorName %>'s quote</div>
           <input type="text" name="quote" placeholder="Quote" required />
           <input type="submit" value="Submit" />
         </form>

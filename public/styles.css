@@ -130,17 +130,23 @@ a {
 }
 
 .quotesSection {
+  margin-top: 25px;
   flex: 1;
   overflow-y: auto;
   font-size: 21px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
 }
 
 .author {
   border: 1px solid pink;
   padding: 10px;
+}
+
+.addAuthorBtn {
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 8px 5px 3px rgb(0, 0, 0, 0.1);
 }
 
 .addAuthorBtn,
@@ -193,8 +199,8 @@ form input:focus {
 
 input[type="submit"] {
   border: none;
-  padding: 10px 50px;
-  width: 12vw;
+  width: 18vw;
+  text-align: center;
 }
 
 input[type="submit"]:hover {
@@ -206,8 +212,9 @@ input[type="submit"]:hover {
 .quotesDiv {
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 20px 30px;
+  padding: 20px 20px 20px 50px;
   gap: 25px;
+  margin-top: 10px;
 }
 
 .quotesHead {
@@ -216,6 +223,12 @@ input[type="submit"]:hover {
   display: flex;
   gap: 25px;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 0px 10px 10px 5px rgb(0, 0, 0, 0.1);
+  align-items: center;
+  padding: 0px 25px 10px;
 }
 
 .quoteAuthor {
