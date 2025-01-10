@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legacy Lines</title>
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/eventListener.js" defer></script>
   </head>
   <body>
     <header>Legacy Lines</header>
     <main>
       <section class="authorsSection">
+        <button class="addAuthorBtn">+ Add Author</button>
         <% authorsArray.forEach(author => { %>
         <div class="author">
           <a href="/<%= author.id %>/quotes"> <%= author.name %> </a>
@@ -24,6 +26,18 @@
           <% }) %>
         </div>
       </section>
+      <dialog id="dialog">
+        <form method="POST" action="/addAuthor" class="authorForm">
+          <div class="formHead">Add author name</div>
+          <input
+            type="text"
+            name="authorName"
+            placeholder="Authors Name"
+            required
+          />
+          <input type="submit" value="Submit" />
+        </form>
+      </dialog>
     </main>
   </body>
 </html>

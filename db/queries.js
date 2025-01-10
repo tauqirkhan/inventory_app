@@ -20,8 +20,13 @@ async function getAuthorNameById(id) {
   return rows[0].name;
 }
 
+async function addAuthor(authorName) {
+  await pool.query("INSERT INTO authors(name) VALUES ($1)", [authorName]);
+}
+
 module.exports = {
   getAllAuthorsNameArray,
   getAllQuotesArrayByAuthorId,
   getAuthorNameById,
+  addAuthor,
 };
