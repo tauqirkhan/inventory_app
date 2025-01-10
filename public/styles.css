@@ -143,31 +143,35 @@ a {
   padding: 10px;
 }
 
-.addAuthorBtn {
+.addAuthorBtn,
+.addQuoteBtn {
   cursor: pointer;
   font-size: inherit;
   padding: 10px;
   border: 1px solid pink;
 }
 
-#dialog {
+#dialogAuthor,
+#dialogQuote {
   border: none;
   background-color: rgb(229, 231, 235);
   padding: 30px;
   border-radius: 50px;
 }
 
-#dialog::backdrop {
+#dialogAuthor::backdrop,
+#dialogQuote::backdrop {
   background-color: rgb(0, 0, 0, 0.4);
 }
 
-.authorForm {
+.authorForm,
+.quoteForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 15vw;
-  height: 18vh;
+  width: 250px;
+  height: 180px;
 }
 
 .formHead {
@@ -209,4 +213,11 @@ input[type="submit"]:hover {
 .quotesHead {
   font-size: 32px;
   font-weight: 600;
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+}
+
+.quoteAuthor {
+  max-width: 400px;
 }

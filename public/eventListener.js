@@ -1,21 +1,41 @@
 const addAuthorBtn = document.querySelector(".addAuthorBtn");
-const dialog = document.querySelector("#dialog");
+const dialogAuthor = document.querySelector("#dialogAuthor");
+const addQuoteBtn = document.querySelector(".addQuoteBtn");
+const dialogQuote = document.querySelector("#dialogQuote");
 
-addAuthorBtn.addEventListener("click", openModal);
-dialog.addEventListener("click", closeModal);
+addAuthorBtn.addEventListener("click", openAuthorModal);
+dialogAuthor.addEventListener("click", closeAuthorModal);
+addQuoteBtn.addEventListener("click", openQuoteModal);
+dialogQuote.addEventListener("click", closeQuoteModal);
 
-function openModal() {
-  dialog.showModal();
+function openAuthorModal() {
+  dialogAuthor.showModal();
 }
 
-function closeModal(e) {
-  const dialogDimensions = dialog.getBoundingClientRect();
+function openQuoteModal() {
+  dialogQuote.showModal();
+}
+
+function closeAuthorModal(e) {
+  const dialogDimensions = dialogAuthor.getBoundingClientRect();
   if (
     e.clientX < dialogDimensions.left ||
     e.clientX > dialogDimensions.right ||
     e.clientY < dialogDimensions.top ||
     e.clientY > dialogDimensions.bottom
   ) {
-    dialog.close();
+    dialogAuthor.close();
+  }
+}
+
+function closeQuoteModal(e) {
+  const dialogDimensions = dialogQuote.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialogQuote.close();
   }
 }

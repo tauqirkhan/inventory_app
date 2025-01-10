@@ -11,6 +11,7 @@ const getAuthorQuotes = async (req, res) => {
     authorsArray: authorsArray,
     quotesArray: quotesArray,
     authorName: authorName,
+    author_id: author_id,
   });
 };
 

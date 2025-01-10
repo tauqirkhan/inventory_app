@@ -19,14 +19,17 @@
         <% }) %>
       </section>
       <section class="quotesSection">
-        <h1 class="quotesHead"><%= authorName %>'s quotes</h1>
+        <div class="quotesHead">
+          <h1 class="quoteAuthor"><%= authorName %>'s quotes</h1>
+          <button class="addQuoteBtn">+ Add quote</button>
+        </div>
         <div class="quotesDiv">
           <% quotesArray.forEach((quote, index) => { %>
           <div class="quote"><%= quote.quote %></div>
           <% }) %>
         </div>
       </section>
-      <dialog id="dialog">
+      <dialog id="dialogAuthor">
         <form method="POST" action="/addAuthor" class="authorForm">
           <div class="formHead">Add author name</div>
           <input
@@ -35,6 +38,17 @@
             placeholder="Authors Name"
             required
           />
+          <input type="submit" value="Submit" />
+        </form>
+      </dialog>
+      <dialog id="dialogQuote">
+        <form
+          action="/<%= author_id %>/addQuote"
+          method="POST"
+          class="quoteForm"
+        >
+          <div class="formHoad"><%= authorName %>'s quote</div>
+          <input type="text" name="quote" placeholder="Quote" required />
           <input type="submit" value="Submit" />
         </form>
       </dialog>
