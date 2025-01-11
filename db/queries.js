@@ -35,6 +35,10 @@ async function deleteAuthorName(author_id) {
   await pool.query("DELETE FROM authors WHERE id = $1", [author_id]);
 }
 
+async function deleteQuoteById(id) {
+  await pool.query("DELETE FROM quotes WHERE id = $1", [id]);
+}
+
 module.exports = {
   getAllAuthorsNameArray,
   getAllQuotesArrayByAuthorId,
@@ -42,4 +46,5 @@ module.exports = {
   insertAuthor,
   insertQuote,
   deleteAuthorName,
+  deleteQuoteById,
 };
