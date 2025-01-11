@@ -31,7 +31,9 @@ async function insertQuote(author_id, quote) {
   ]);
 }
 
-insertQuote(40, "One step at a time");
+async function deleteAuthorName(author_id) {
+  await pool.query("DELETE FROM authors WHERE id = $1", [author_id]);
+}
 
 module.exports = {
   getAllAuthorsNameArray,
@@ -39,4 +41,5 @@ module.exports = {
   getAuthorNameById,
   insertAuthor,
   insertQuote,
+  deleteAuthorName,
 };

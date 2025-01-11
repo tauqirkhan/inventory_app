@@ -122,7 +122,7 @@ a {
 }
 
 .authorsSection {
-  width: 250px;
+  width: 280px;
   overflow-y: auto;
   font-size: 24px;
   display: flex;
@@ -141,6 +141,10 @@ a {
 .author {
   border: 1px solid pink;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .addAuthorBtn {
@@ -176,7 +180,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 250px;
+  width: 300px;
   height: 180px;
 }
 
