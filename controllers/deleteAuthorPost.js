@@ -1,3 +1,5 @@
+const getFirstNonDeletedId = require("./utils/getFirstNonDeletedId");
+
 const db = require("../db/queries");
 
 const deleteAuthorPost = async (req, res) => {
@@ -5,7 +7,9 @@ const deleteAuthorPost = async (req, res) => {
 
   await db.deleteAuthorName(author_id);
 
-  res.redirect("/");
+  const redirectedId = await getFirstNonDeletedId();
+
+  res.redirect(`/${redirectedId}/quotes`);
 };
 
 module.exports = deleteAuthorPost;

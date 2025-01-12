@@ -17,6 +17,8 @@ async function getAuthorNameById(id) {
   const { rows } = await pool.query("SELECT name FROM authors WHERE id = $1", [
     id,
   ]);
+  console.log("query row", rows);
+  if (rows.length == 0) return rows;
   return rows[0].name;
 }
 
