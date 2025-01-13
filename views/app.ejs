@@ -12,26 +12,8 @@
     <main>
       <section class="authorsSection">
         <button class="addAuthorBtn">+ Add Author</button>
-        <% authorsArray.forEach(author => { %>
-        <div class="author">
-          <a href="/<%= author.id %>/quotes"> <%= author.name %> </a>
-          <form action="/<%=author.id%>/deleteAuthor" method="POST">
-            <button type="submit" class="deleteAuthorBtn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="25"
-                height="25"
-              >
-                <title>trash-can-outline</title>
-                <path
-                  d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-        <% }) %>
+        <% authorsArray.forEach(author => { %> <%-
+        include('authors/author',{author: author}); %> <% }) %>
       </section>
       <section class="quotesSection">
         <div class="quotesHead">
@@ -39,24 +21,8 @@
           <button class="addQuoteBtn">+ Add more quote</button>
         </div>
         <div class="quotesDiv">
-          <% quotesArray.forEach((quote, index) => { %>
-          <div class="quote"><%= quote.quote %></div>
-          <form action="/<%= quote.id %>/deleteQuote" method="POST">
-            <button type="submit" class="deleteQuoteBtn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="25"
-                height="25"
-              >
-                <title>trash-can-outline</title>
-                <path
-                  d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
-                />
-              </svg>
-            </button>
-          </form>
-          <% }) %>
+          <% quotesArray.forEach((quote, index) => { %> <%-
+          include('quotes/quote', {quote: quote}) %> <% }) %>
         </div>
       </section>
       <dialog id="dialogAuthor">
