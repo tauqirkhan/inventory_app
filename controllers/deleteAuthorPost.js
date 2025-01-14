@@ -1,15 +1,19 @@
 const getFirstNonDeletedId = require("./utils/getFirstNonDeletedId");
+const getNextIdOfDeletedAuthor = require("./utils/getNextIdOfDeletedAuthor");
 
 const db = require("../db/queries");
 
 const deleteAuthorPost = async (req, res) => {
   const { author_id } = req.params;
 
-  await db.deleteAuthorName(author_id);
+  numbered_author_id = Number(author_id);
+  await db.deleteAuthorName(numbered_author_id);
 
-  const redirectedId = await getFirstNonDeletedId();
+  const nextIdOfDeletedAuthor = await getNextIdOfDeletedAuthor(
+    numbered_author_id
+  );
 
-  res.redirect(`/${redirectedId}/quotes`);
+  res.redirect(`/${nextIdOfDeletedAuthor}/quotes`);
 };
 
 module.exports = deleteAuthorPost;
