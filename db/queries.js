@@ -1,5 +1,6 @@
 const pool = require("./pool");
 
+//Should be names getAllAuthorsArray!
 async function getAllAuthorsNameArray() {
   const { rows } = await pool.query("SELECT * FROM authors;");
   return rows;
@@ -55,6 +56,13 @@ async function deleteQuoteById(id) {
   await pool.query("DELETE FROM quotes WHERE id = $1", [id]);
 }
 
+async function updateAuthorNamePost(authorName, author_id) {
+  await pool.query("UPDATE authors  SET name = $1 WHERE id = $2", [
+    authorName,
+    author_id,
+  ]);
+}
+
 module.exports = {
   getAuthorIdArrayByName,
   getAuthorIdByQuoteId,
@@ -65,4 +73,5 @@ module.exports = {
   insertQuote,
   deleteAuthorName,
   deleteQuoteById,
+  updateAuthorNamePost,
 };
