@@ -122,7 +122,7 @@ a {
 }
 
 .authorsSection {
-  width: 280px;
+  width: 350px;
   overflow-y: auto;
   font-size: 24px;
   display: flex;
@@ -142,9 +142,12 @@ a {
   border: 1px solid pink;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 20px;
+}
+
+.authorName {
+  flex: 1;
 }
 
 .addAuthorBtn {
@@ -184,12 +187,7 @@ a {
   justify-content: space-between;
   align-items: center;
   width: 300px;
-  height: 180px;
-}
-
-.updateAuthorForm {
   height: 250px;
-  width: 300px;
 }
 
 .formHead {
