@@ -17,7 +17,6 @@ async function getAuthorNameById(id) {
   const { rows } = await pool.query("SELECT name FROM authors WHERE id = $1", [
     id,
   ]);
-  console.log("query row", rows);
   if (rows.length == 0) return rows;
   return rows[0].name;
 }
@@ -41,7 +40,17 @@ async function deleteQuoteById(id) {
   await pool.query("DELETE FROM quotes WHERE id = $1", [id]);
 }
 
+async function getAuthorIdByQuoteId(quote_id) {
+  const { rows } = await pool.query(
+    "SELECT author_id FROM quotes WHERE quotes.id = $1;",
+    [quote_id]
+  );
+  console.log("rows deleted", rows);
+  return rows[0].author_id;
+}
+
 module.exports = {
+  getAuthorIdByQuoteId,
   getAllAuthorsNameArray,
   getAllQuotesArrayByAuthorId,
   getAuthorNameById,
