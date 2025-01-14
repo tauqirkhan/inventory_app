@@ -1,5 +1,5 @@
 <div class="author">
-  <button id="updateAuthorNameBtn<%= author.id%>">
+  <button class="updateAuthorBtn" id="updateAuthorNameBtn<%= author.id%>">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
@@ -28,13 +28,16 @@
       </svg>
     </button>
   </form>
-  <dialog id="dialogUpdateAuthor<%= author.id %>">
+  <dialog class="dialogEditAuthor" id="dialogUpdateAuthor<%= author.id %>">
     <form
       action="/<%=author.id%>/update"
       method="POST"
       class="updateAuthorForm"
     >
-      <div class="formHead">Update <%= author.name %></div>
+      <div class="formHead">
+        Update <%= author.name %> <br />
+        to :
+      </div>
       <input
         type="text"
         name="newAuthorName"

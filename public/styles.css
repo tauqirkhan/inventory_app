@@ -162,7 +162,8 @@ a {
 }
 
 #dialogAuthor,
-#dialogQuote {
+#dialogQuote,
+.dialogEditAuthor {
   border: none;
   background-color: rgb(229, 231, 235);
   padding: 30px;
@@ -170,12 +171,14 @@ a {
 }
 
 #dialogAuthor::backdrop,
-#dialogQuote::backdrop {
+#dialogQuote::backdrop,
+.dialogEditAuthor::backdrop {
   background-color: rgb(0, 0, 0, 0.4);
 }
 
 .authorForm,
-.quoteForm {
+.quoteForm,
+.updateAuthorForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -184,9 +187,21 @@ a {
   height: 180px;
 }
 
+.updateAuthorForm {
+  height: 250px;
+  width: 300px;
+}
+
 .formHead {
   font-size: 32px;
   font-weight: bolder;
+  padding: 10px;
+  align-self: start;
+}
+
+.dialogEditAuthor > .formHead {
+  font-size: 28px;
+  font-weight: 900;
 }
 
 input {
@@ -247,6 +262,7 @@ input[type="submit"]:hover {
 }
 
 .deleteQuoteBtn:hover,
-.deleteAuthorBtn:hover {
+.deleteAuthorBtn:hover,
+.updateAuthorBtn:hover {
   cursor: pointer;
 }
