@@ -21,6 +21,21 @@ async function getAuthorNameById(id) {
   return rows[0].name;
 }
 
+async function getAuthorIdByQuoteId(quote_id) {
+  const { rows } = await pool.query(
+    "SELECT author_id FROM quotes WHERE quotes.id = $1;",
+    [quote_id]
+  );
+  return rows[0].author_id;
+}
+
+async function getAuthorIdArrayByName(name) {
+  const { rows } = await pool.query("SELECT id FROM authors WHERE name = $1", [
+    name,
+  ]);
+  return rows;
+}
+
 async function insertAuthor(authorName) {
   await pool.query("INSERT INTO authors(name) VALUES ($1)", [authorName]);
 }
@@ -40,16 +55,8 @@ async function deleteQuoteById(id) {
   await pool.query("DELETE FROM quotes WHERE id = $1", [id]);
 }
 
-async function getAuthorIdByQuoteId(quote_id) {
-  const { rows } = await pool.query(
-    "SELECT author_id FROM quotes WHERE quotes.id = $1;",
-    [quote_id]
-  );
-  console.log("rows deleted", rows);
-  return rows[0].author_id;
-}
-
 module.exports = {
+  getAuthorIdArrayByName,
   getAuthorIdByQuoteId,
   getAllAuthorsNameArray,
   getAllQuotesArrayByAuthorId,
