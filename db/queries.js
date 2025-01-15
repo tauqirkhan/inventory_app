@@ -6,6 +6,11 @@ async function getAllAuthorsNameArray() {
   return rows;
 }
 
+async function getAllQuotesArray() {
+  const { rows } = await pool.query("SELECT * FROM quotes;");
+  return rows;
+}
+
 async function getAllQuotesArrayByAuthorId(author_id) {
   const { rows } = await pool.query(
     "SELECT * FROM quotes WHERE author_id = $1;",
@@ -63,8 +68,16 @@ async function updateAuthorNamePost(authorName, author_id) {
   ]);
 }
 
+async function updateQuotePost(newQuoteText, quote_id) {
+  await pool.query("UPDATE quotes SET quote = $1 WHERE id = $2", [
+    newQuoteText,
+    quote_id,
+  ]);
+}
+
 module.exports = {
   getAuthorIdArrayByName,
+  getAllQuotesArray,
   getAuthorIdByQuoteId,
   getAllAuthorsNameArray,
   getAllQuotesArrayByAuthorId,
@@ -74,4 +87,5 @@ module.exports = {
   deleteAuthorName,
   deleteQuoteById,
   updateAuthorNamePost,
+  updateQuotePost,
 };

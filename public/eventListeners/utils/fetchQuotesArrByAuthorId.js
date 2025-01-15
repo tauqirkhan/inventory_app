@@ -1,5 +1,5 @@
-export default async function fetchAuthorsArr() {
-  const url = "/db/authorsArray";
+export default async function fetchQuotesArrByAuthorId(author_id) {
+  const url = `/db/quotesArray?author_id=${author_id}`;
 
   try {
     const response = await fetch(url);
