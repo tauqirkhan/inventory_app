@@ -12,7 +12,7 @@
       />
     </svg>
   </button>
-  <p><%= quote.quote %></p>
+  <p class="quoteText"><%= quote.quote %></p>
   <form action="/<%= quote.id %>/deleteQuote" method="POST">
     <button type="submit" class="deleteQuoteBtn">
       <svg
@@ -35,7 +35,8 @@
       class="updateQuoteForm"
     >
       <div class="formHead">
-        Update <%= quote.quote %> <br />
+        Update <br />
+        <p class="formQuoteText"><%= quote.quote %></p>
         to :
       </div>
       <input
