@@ -21,8 +21,8 @@
           <button class="addQuoteBtn">+ Add more quote</button>
         </div>
         <div class="quotesDiv">
-          <% quotesArray.forEach((quote, index) => { %> <%-
-          include('quotes/quote', {quote: quote}) %> <% }) %>
+          <%- include('errors/errors.ejs'); %> <% quotesArray.forEach((quote,
+          index) => { %> <%- include('quotes/quote', {quote: quote}) %> <% }) %>
         </div>
       </section>
       <dialog id="dialogAuthor">
