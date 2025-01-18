@@ -13,7 +13,7 @@ const updateAuthorNamePost = async (req, res) => {
     return;
   }
 
-  res.locals.errors = [{ msg: "Incorrect admin password" }];
+  res.locals.errors = [{ msg: "Incorrect admin password to edit Author Name" }];
   await getAuthorQuotes(req, res);
 };
 
