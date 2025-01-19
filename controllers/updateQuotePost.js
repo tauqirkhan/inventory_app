@@ -1,5 +1,4 @@
 const db = require("../db/queries");
-const getAllQuotesArray = require("./getAuthorQuotes");
 require("dotenv").config();
 
 const updateQuotePost = async (req, res) => {
@@ -8,17 +7,14 @@ const updateQuotePost = async (req, res) => {
 
   const author_id = await db.getAuthorIdByQuoteId(quote_id);
 
-  if (process.env.ADMINPASSWORD === adminPassword) {
+  if (process.env.ADMINPASSWORD === String(adminPassword)) {
     await db.updateQuotePost(newQuoteText, quote_id);
 
     res.redirect(`/${author_id}/quotes`);
     return;
   }
 
-  res.locals.errors = [{ msg: "Incorrect admin password to edit quote" }];
-  req.params.author_id = author_id;
-
-  await getAllQuotesArray(req, res);
+  res.redirect(`/${author_id}/quotes?error_type=quoteError`);
 };
 
 module.exports = updateQuotePost;

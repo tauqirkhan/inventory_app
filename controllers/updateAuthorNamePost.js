@@ -1,5 +1,4 @@
 const db = require("../db/queries");
-const getAuthorQuotes = require("./getAuthorQuotes");
 require("dotenv").config();
 
 const updateAuthorNamePost = async (req, res) => {
@@ -13,8 +12,7 @@ const updateAuthorNamePost = async (req, res) => {
     return;
   }
 
-  res.locals.errors = [{ msg: "Incorrect admin password to edit Author Name" }];
-  await getAuthorQuotes(req, res);
+  res.redirect(`/${author_id}/quotes?error_type=authorError`);
 };
 
 module.exports = updateAuthorNamePost;
