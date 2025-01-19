@@ -48,12 +48,28 @@ async function addEventListenerToEachQuoteByAuthorId(author_id) {
       `#updateQuoteBtn${quote.id}`
     );
 
+    const dialogDeleteQuoteId = document.querySelector(
+      `#dialogDeleteQuote${quote.id}`
+    );
+
+    const deleteQuoteBtnId = document.querySelector(
+      `#deleteQuoteBtn${quote.id}`
+    );
+
     updateQuoteBtnId.addEventListener("click", () =>
       openModal(dialogUpdateQuoteId)
     );
 
     dialogUpdateQuoteId.addEventListener("click", (e) =>
       closeModal(e, dialogUpdateQuoteId)
+    );
+
+    deleteQuoteBtnId.addEventListener("click", () =>
+      openModal(dialogDeleteQuoteId)
+    );
+
+    dialogDeleteQuoteId.addEventListener("click", (e) =>
+      closeModal(e, dialogDeleteQuoteId)
     );
   });
 }

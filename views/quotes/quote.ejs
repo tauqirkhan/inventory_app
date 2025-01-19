@@ -13,7 +13,7 @@
     </svg>
   </button>
   <p class="quoteText"><%= quote.quote %></p>
-  <form action="/<%= quote.id %>/deleteQuote" method="POST">
+  <!-- <form action="/<%= quote.id %>/deleteQuote" method="POST">
     <button type="submit" class="deleteQuoteBtn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,20 @@
         />
       </svg>
     </button>
-  </form>
+  </form> -->
+  <button class="deleteQuoteBtn" id="deleteQuoteBtn<%= quote.id %>">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="25"
+      height="25"
+    >
+      <title>Delete Quote</title>
+      <path
+        d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+      />
+    </svg>
+  </button>
   <dialog class="dialogEditQuote" id="dialogUpdateQuote<%= quote.id %>">
     <form
       action="/<%=quote.id%>/updateQuote"
@@ -52,6 +65,25 @@
         required
       />
       <input type="submit" value="Submit" />
+    </form>
+  </dialog>
+  <dialog class="dialogDeleteQuote" id="dialogDeleteQuote<%= quote.id %>">
+    <form
+      action="/<%= quote.id %>/deleteQuote"
+      method="POST"
+      class="deleteQuoteForm"
+    >
+      <div class="formHead">
+        Delete <br />
+        <p class="formQuoteText"><%= quote.quote %></p>
+      </div>
+      <input
+        type="password"
+        name="adminPassword"
+        placeholder="Enter admin password"
+        required
+      />
+      <input type="submit" value="Delete Quote" />
     </form>
   </dialog>
 </div>
