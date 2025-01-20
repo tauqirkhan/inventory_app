@@ -15,6 +15,11 @@ function checkQueryAndAddError(error_type, resObj) {
         { msg: "Incorrect admin password to delete quote" },
       ];
     }
+    if (error_type == "authorErrorDel") {
+      resObj.locals.errors = [
+        { msg: "Incorrect admin password to delete author name" },
+      ];
+    }
   }
 }
 

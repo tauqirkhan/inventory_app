@@ -5,11 +5,11 @@ require("dotenv").config();
 const deleteQuotePost = async (req, res) => {
   const { quote_id } = req.params;
   const { adminPassword } = req.body;
-
-  const author_id = await db.getAuthorIdByQuoteId(quote_id);
+  numbered_quote_id = Number(quote_id);
+  const author_id = await db.getAuthorIdByQuoteId(numbered_quote_id);
 
   if (process.env.ADMINPASSWORD === String(adminPassword)) {
-    await db.deleteQuoteById(quote_id);
+    await db.deleteQuoteById(numbered_quote_id);
 
     //Ends middleware request response cycle
     res.redirect(`/${author_id}/quotes`);
