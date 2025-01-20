@@ -168,7 +168,8 @@ a {
 #dialogQuote,
 .dialogEditAuthor,
 .dialogEditQuote,
-.dialogDeleteQuote {
+.dialogDeleteQuote,
+.dialogDeleteAuthor {
   border: none;
   background-color: rgb(229, 231, 235);
   padding: 30px;
@@ -179,7 +180,8 @@ a {
 #dialogQuote::backdrop,
 .dialogEditAuthor::backdrop,
 .dialogEditQuote::backdrop,
-.dialogDeleteQuote::backdrop {
+.dialogDeleteQuote::backdrop,
+.dialogDeleteAuthor::backdrop {
   background-color: rgb(0, 0, 0, 0.4);
 }
 
@@ -187,7 +189,8 @@ a {
 .quoteForm,
 .updateAuthorForm,
 .updateQuoteForm,
-.deleteQuoteForm {
+.deleteQuoteForm,
+.deleteAuthorForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

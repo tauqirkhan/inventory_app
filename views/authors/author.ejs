@@ -13,7 +13,7 @@
     </svg>
   </button>
   <a class="authorName" href="/<%= author.id %>/quotes"> <%= author.name %> </a>
-  <form action="/<%=author.id%>/deleteAuthor" method="POST">
+  <!-- <form action="/<%=author.id%>/deleteAuthor" method="POST">
     <button class="deleteAuthorBtn">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,36 @@
         />
       </svg>
     </button>
-  </form>
+  </form> -->
+  <button class="deleteAuthorBtn" id="deleteAuthorNameBtn<%= author.id %>">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="25"
+      height="25"
+    >
+      <title>Delete Author</title>
+      <path
+        d="M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z"
+      />
+    </svg>
+  </button>
+  <dialog class="dialogDeleteAuthor" id="dialogDeleteAuthor<%= author.id %>">
+    <form
+      action="/<%=author.id%>/deleteAuthor"
+      method="POST"
+      class="deleteAuthorForm"
+    >
+      <div class="formHead">Delete <%= author.name %></div>
+      <input
+        type="password"
+        name="adminPassword"
+        placeholder="Enter admin password"
+        required
+      />
+      <input type="submit" value="Delete Author" />
+    </form>
+  </dialog>
   <dialog class="dialogEditAuthor" id="dialogUpdateAuthor<%= author.id %>">
     <form
       action="/<%=author.id%>/updateAuthor"

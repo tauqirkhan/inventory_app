@@ -27,6 +27,12 @@ async function addEventListenerToEachAuthorId() {
     const dialogAuthorId = document.querySelector(
       `#dialogUpdateAuthor${author.id}`
     );
+    const deleteAuthorNameBtnId = document.querySelector(
+      `#deleteAuthorNameBtn${author.id}`
+    );
+    const dialogDeleteAuthorId = document.querySelector(
+      `#dialogDeleteAuthor${author.id}`
+    );
 
     updateAuthorNameBtnId.addEventListener("click", () =>
       openModal(dialogAuthorId)
@@ -34,6 +40,12 @@ async function addEventListenerToEachAuthorId() {
     dialogAuthorId.addEventListener("click", (e) =>
       closeModal(e, dialogAuthorId)
     );
+    deleteAuthorNameBtnId.addEventListener("click", () => {
+      openModal(dialogDeleteAuthorId);
+    });
+    dialogDeleteAuthorId.addEventListener("click", (e) => {
+      closeModal(e, dialogDeleteAuthorId);
+    });
   });
 }
 
