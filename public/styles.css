@@ -89,23 +89,31 @@ video {
   vertical-align: baseline;
 }
 
+:root {
+  --background-color: #e4e1e1;
+  --foreground-color: #ffffff;
+}
+
 body {
   max-width: 100vw;
   min-height: 100vh;
+  background-color: var(--background-color);
 }
 
 header {
+  background-color: var(--foreground-color);
   min-height: 10vh;
   font-size: 64px;
   font-weight: bold;
   letter-spacing: 5px;
   display: flex;
   align-items: center;
-  border: 1px solid red;
   padding-left: 8vw;
+  box-shadow: 0px 5px 10px 10px rgb(0, 0, 0, 0.1);
 }
 
 main {
+  background-color: var(--foreground-color);
   border: 1px solid black;
   display: flex;
   max-width: 80vw;
@@ -130,7 +138,6 @@ a {
 }
 
 .quotesSection {
-  margin-top: 25px;
   flex: 1;
   overflow-y: auto;
   font-size: 21px;
@@ -139,7 +146,7 @@ a {
 }
 
 .author {
-  border: 1px solid pink;
+  border: 1px solid black;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -161,7 +168,14 @@ a {
   cursor: pointer;
   font-size: inherit;
   padding: 10px;
-  border: 1px solid pink;
+  border: 1px solid black;
+}
+
+.addAuthorBtn:hover,
+.addQuoteBtn:hover {
+  background-color: #9c9c9c;
+  cursor: pointer;
+  color: white;
 }
 
 #dialogAuthor,
@@ -252,6 +266,7 @@ input[type="submit"]:hover {
   padding: 20px 20px 20px 50px;
   gap: 40px;
   margin-top: 10px;
+  border-left: 1px solid black;
 }
 
 .quote {
@@ -265,6 +280,7 @@ input[type="submit"]:hover {
 }
 
 .quotesHead {
+  margin-top: 20px;
   font-size: 32px;
   font-weight: 600;
   display: flex;
@@ -275,7 +291,7 @@ input[type="submit"]:hover {
   background-color: white;
   box-shadow: 0px 10px 10px 5px rgb(0, 0, 0, 0.1);
   align-items: center;
-  padding: 0px 25px 10px;
+  padding: 10px 25px;
 }
 
 .quoteAuthor {
