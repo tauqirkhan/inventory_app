@@ -199,8 +199,9 @@ a {
   height: 350px;
 }
 
-.updateQuoteForm {
-  height: 350px;
+.updateQuoteForm,
+.deleteQuoteForm {
+  height: 480px;
 }
 
 .formQuoteText {
