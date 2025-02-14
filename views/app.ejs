@@ -32,6 +32,7 @@
             type="text"
             name="authorName"
             placeholder="Authors Name"
+            autocomplete="off"
             required
           />
           <input type="submit" value="Submit" />
@@ -44,7 +45,13 @@
           class="quoteForm"
         >
           <div class="formHead"><%= authorName %>'s quote</div>
-          <input type="text" name="quote" placeholder="Quote" required />
+          <input
+            type="text"
+            name="quote"
+            placeholder="Quote"
+            autocomplete="off"
+            required
+          />
           <input type="submit" value="Submit" />
         </form>
       </dialog>
